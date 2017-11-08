@@ -44,54 +44,51 @@ class Users extends Component {
   render() {
     return(
       <div>
-      <div id="cover">
-      <Image src={bG} />
-      <div id="container">
-        <div className="Users">
-          <h1>Users</h1>
-          {this.state.users.map(user =>
-          <div key = {user.id}>
-            <b>{user.email}</b>
-            <p>{user.name}</p>
-          </div>
-          )}
+      <Image src={bG} responsive/>
+        <div id="cover">
+          <div id="container">
+              <div className="Users">
+                <h1>Sign up!</h1>
+                {this.state.users.map(user =>
+                <div key = {user.id}>
+                  <b>{user.email}</b>
+                  <p>{user.name}</p>
+                </div>
+                )}
+              </div>
+              <div className="SignUp">
+                <Form >
+                    <FieldGroup
+                      id="formControlsText"
+                      name="name"
+                      type="text"
+                      label="Name"
+                      placeholder="Enter name"
+                      onChange={this.onChange}
+                    />
+                    <FieldGroup
+                      id="formControlsEmail"
+                      name="email"
+                      type="email"
+                      label="Email address"
+                      placeholder="Enter email"
+                      onChange={this.onChange}
+                    />
+                    <FieldGroup
+                      id="formControlsPassword"
+                      name="password"
+                      label="Password"
+                      type="password"
+                      placeholder="Enter password"
+                      onChange={this.onChange}
+                    />
+                </Form>
+                <Button bsStyle="success" onClick={this.onClick} >
+                  SUBMITT
+                </Button>
+              </div>
+            </div>
         </div>
-        <div className="SignUp">
-          <Form >
-              <FieldGroup
-                id="formControlsText"
-                name="name"
-                type="text"
-                label="Name"
-                placeholder="Enter name"
-                onChange={this.onChange}
-              />
-              <FieldGroup
-                id="formControlsEmail"
-                name="email"
-                type="email"
-                label="Email address"
-                placeholder="Enter email"
-                onChange={this.onChange}
-              />
-              <FieldGroup
-                id="formControlsPassword"
-                name="password"
-                label="Password"
-                type="password"
-                placeholder="Enter password"
-                onChange={this.onChange}
-              />
-          </Form>
-          <Button
-            bsStyle="success"
-            onClick={this.onClick}
-          >
-            SING UP
-          </Button>
-        </div>
-        </div>
-      </div>
       </div>
     );
   }
