@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup}  from 'react-bootstrap';
+const request = require('superagent');
 
 class Users extends Component {
   state = {
@@ -20,17 +21,19 @@ class Users extends Component {
 
   onClick = () => {
     let user = this.state.createUser;
-    fetch('http://localhost:3001/api/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: user.name,
-        email: user.email,
-        password: user.password
+    request
+      .post('http://localhost:3001/api/users')
+      .send({
+        "user": {
+          "name": user.name,
+          "email": user.email,
+          "password": user.password
+        }
       })
-    })
+      .set('X-API-Key', 'foobar')
+      .set('accept', 'json')
+      .end((err, res) => {
+      });
   }
 
   componentDidMount() {
