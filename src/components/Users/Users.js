@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup}  from 'react-bootstrap';
+import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup, Image}  from 'react-bootstrap';
+import "./Login.css";
+import bG from './bg.jpg';
+
 
 class Users extends Component {
   state = {
@@ -41,12 +44,15 @@ class Users extends Component {
   render() {
     return(
       <div>
+      <div id="cover">
+      <Image src={bG} />
+      <div id="container">
         <div className="Users">
           <h1>Users</h1>
           {this.state.users.map(user =>
           <div key = {user.id}>
-            <b>{user.name}</b>
-            <p>{user.email}</p>
+            <b>{user.email}</b>
+            <p>{user.name}</p>
           </div>
           )}
         </div>
@@ -84,6 +90,8 @@ class Users extends Component {
             SING UP
           </Button>
         </div>
+        </div>
+      </div>
       </div>
     );
   }
