@@ -1,0 +1,27 @@
+body {
+  margin-top: -20px;
+}
+
+h1 {
+  background-color: #99ffd6;
+}
+
+.goals {
+  height: auto;
+}
+
+.title {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+
+.form {
+  margin: auto;
+  width: 30%;
+}
+
+.button {
+  margin: auto;
+  width: 50%;
+}
