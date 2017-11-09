@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+
 import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup, Image, ButtonToolbar}  from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "./Users.css";
 import bG from './bg.jpg';
 
+const request = require('superagent');
 
 class Users extends Component {
   state = {
@@ -24,18 +26,19 @@ class Users extends Component {
 
   onClick = () => {
     let user = this.state.createUser;
-    console.log(user);
-    fetch('http://localhost:3001/api/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: user.name,
-        email: user.email,
-        password: user.password
+    request
+      .post('http://localhost:3001/api/users')
+      .send({
+        "user": {
+          "name": user.name,
+          "email": user.email,
+          "password": user.password
+        }
       })
-    })
+      .set('X-API-Key', 'foobar')
+      .set('accept', 'json')
+      .end((err, res) => {
+      });
   }
 
   render() {

@@ -1,0 +1,170 @@
+header{
+	background-color: #557740;
+	background: rgba(85, 119, 64, 0.5);
+	padding: 10px 0px;
+	position: absolute;
+	z-index: 20;
+
+	
+}
+/*al poner coma a un elemento en css es como si se estubiera
+personalizando cada una de esas etiquetas de una sola vez*/
+header,
+section,
+footer{
+	width: 100%;
+}
+.contenedor{
+	width: 1280px;
+	margin: 0px auto;
+}
+header img{
+	height: 70px !important;
+	width: auto;
+	margin left: 120px;
+
+}
+
+
+.boton,
+.boton:Link,
+.boton:active,
+.boton:Visited{
+	background-color: #5c355a;
+	padding: 15px 20px;
+	border-radius: 30px;
+	margin-top: 10px;
+	margin-right: 100px;
+	display: inline-block;
+	color: white;
+	text-transform: uppercase;
+	
+}
+.boton:hover{
+	background-color: #ab6da8;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+#video video{
+	position: absolute;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: -10;
+}
+#video{
+	height: 95vh;
+	position: relative;
+	display: table;
+}
+#video .text-video{
+	color: white;
+	width: 100%;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+#video .fullscreen{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -20;
+}
+.boton_transparente{
+	margin-right: 0px;
+	background-color: transparent;
+	border: 1px solid white;
+}
+.boton_transparente:hover{
+	background-color: white;
+	color: #5c355a;
+	text-shadow: 1px 1px 5px green;
+}
+body{
+	font-family: "lato", sans-serif;
+	color: #404063;
+}
+
+h2{
+	color: #5c355a;
+}
+.contenedor-boton{
+	text-align: right;
+}
+.contenedor-boton .boton{
+	margin-right: 0px;
+}
+#personajes .logo-section img{
+	height: 80px;
+}
+#personajes{
+	background-color: #dcd8c0;
+	padding: 30px 0px;
+}
+h3{
+	size: 20px;
+	color: #304224;
+	margin-bottom: 30px;
+}
+#contacto{
+	overflow: hidden;
+	background-color: #aea46b;
+	padding-top: 90px;
+}
+footer{
+	background-color: #5c355a;
+	color: white;
+}
+footer a{
+	color: white;
+}
+.contenedor1{
+	margin: 0px auto;
+	overflow: hidden;
+	width: 1280px;
+
+}
+footer a,
+footer a:link,
+footer a:active,
+footer a:visited{
+	color: white;
+}
+footer a:nth-child(2){
+	margin: 0px 15px;
+}
+#contacto button{
+	margin-right: 0px;
+	margin-left: 45px;
+	border: none;
+}
+@media screen and (max-width: 768px){
+	header a.boton{
+		margin-right: 0px;
+		margin-top: 0px;
+		width: 100%;
+		height: 70px;
+		border-radius: 0px;
+		text-align: center;
+
+	}
+
+header .row .col-xs-6{
+	padding: 0px;
+	text-align: center;
+}
+header,
+header .comtainer{
+	padding: 0px;
+}
+header img.img-responsive{
+	margin-left: 0px;
+	display: inline;
+}
+}

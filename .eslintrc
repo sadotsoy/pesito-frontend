@@ -1,0 +1,18 @@
+{
+  // https://github.com/airbnb/javascript
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": ["error", 120],
+
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
+    "react/require-default-props": 0,
+  }
+}
