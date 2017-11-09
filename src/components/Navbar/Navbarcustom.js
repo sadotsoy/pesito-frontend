@@ -10,7 +10,7 @@ class Navbarcustom extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="">Pesito</a>
+              <a className="PesitoLink" href="/">Pesito</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
