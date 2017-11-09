@@ -8,6 +8,7 @@ h1 {
 
 .goals {
   height: auto;
+  min-height: 930px;
 }
 
 .title {
