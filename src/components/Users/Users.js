@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup, Image}  from 'react-bootstrap';
-import "./Login.css";
+import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup, Image, ButtonToolbar}  from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import "./Users.css";
 import bG from './bg.jpg';
 
 
@@ -23,6 +24,7 @@ class Users extends Component {
 
   onClick = () => {
     let user = this.state.createUser;
+    console.log(user);
     fetch('http://localhost:3001/api/users', {
       method: 'POST',
       headers: {
@@ -36,18 +38,13 @@ class Users extends Component {
     })
   }
 
-  componentDidMount() {
-    fetch('/api/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users }))
-  }
   render() {
     return(
       <div>
       <Image src={bG} responsive/>
         <div id="cover">
           <div id="container">
-              <div className="Users">
+              <div className="Users" id="signText">
                 <h1>Sign up!</h1>
                 {this.state.users.map(user =>
                 <div key = {user.id}>
@@ -56,10 +53,10 @@ class Users extends Component {
                 </div>
                 )}
               </div>
-              <div className="SignUp">
+              <div className="SignUp" id="signForm">
                 <Form >
                     <FieldGroup
-                      id="formControlsText"
+                      id="formControlsName"
                       name="name"
                       type="text"
                       label="Name"
@@ -83,9 +80,11 @@ class Users extends Component {
                       onChange={this.onChange}
                     />
                 </Form>
-                <Button bsStyle="success" onClick={this.onClick} >
-                  SUBMITT
-                </Button>
+                <ButtonToolbar>
+                  <Link to ="/introduction">
+                    <Button id="submitButton" bsStyle="primary" onClick={this.onClick} > Submit </Button>
+                  </Link>
+                </ButtonToolbar>
               </div>
             </div>
         </div>
