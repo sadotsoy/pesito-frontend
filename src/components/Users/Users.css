@@ -1,0 +1,60 @@
+body{
+    background:#cc9;
+    /*background-image:url('bg.png');*/
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    margin: 0;
+}
+
+#container{
+    background-color:#90CAF9;
+    /*background-color:#356AA0;*/
+    /*box-shadow: 0 0 0 9px rgba(128,0,0,.1);*/
+    /*Margen de sombra alrededor del contenedor 8px negro*/
+    box-shadow: 3px 3px 10px 5px rgba(0,0,0,.8);
+    /*Las 3 líneas siguientes, sirven para el borde redondeado
+     * pero para diferentes navegadores*/
+    -webkit-border-radius:5px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+
+#cover{
+    position:absolute;
+    /*left y top al 50% para que quede centrado en la pantalla*/
+    left:50%;
+    top:50%;
+    margin-left:-165px;
+    margin-top: -210px;
+    width: 330px;
+
+}
+
+#signText {
+  color:#DFFFFF;
+  margin-left: 10px;
+}
+
+#signForm {
+  color:#1e1d1d;
+  margin-left: 6px;
+}
+
+#formControlsName {
+  width:95%;
+  margin:auto;
+}
+
+#formControlsEmail {
+  width:95%;
+  margin:auto;
+}
+
+#formControlsPassword {
+  width:95%;
+  margin:auto;
+}
+
+#submitButton {
+  margin-left: 10px;
+}

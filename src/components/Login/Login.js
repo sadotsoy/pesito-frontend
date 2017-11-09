@@ -1,44 +1,39 @@
 import React, { Component } from 'react';
-
 import { Button, Form, FormControl, ControlLabel, HelpBlock, FormGroup, Image, ButtonToolbar}  from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import "./Users.css";
+import "./Login.css";
 import bG from './bg.jpg';
 
-const request = require('superagent');
 
-class Users extends Component {
+class Login extends Component {
   state = {
-    users: [],
-    createUser: {
-      name: '',
+    login: [],
+    loginUser: {
       email: '',
       password: ''
     }
   }
 
   onChange = (e) => {
-    let createUser = this.state.createUser;
+    let loginUser = this.state.loginUser;
     const field = e.target.name
-    createUser[field] = e.target.value;
-    this.setState({createUser});
+    loginUser[field] = e.target.value;
+    this.setState({loginUser});
   }
 
   onClick = () => {
-    let user = this.state.createUser;
-    request
-      .post('http://localhost:3001/api/users')
-      .send({
-        "user": {
-          "name": user.name,
-          "email": user.email,
-          "password": user.password
-        }
+    let login = this.state.loginUser;
+    console.log(login);
+    fetch('http://localhost:3001/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: login.email,
+        password: login.password
       })
-      .set('X-API-Key', 'foobar')
-      .set('accept', 'json')
-      .end((err, res) => {
-      });
+    })
   }
 
   render() {
@@ -47,25 +42,17 @@ class Users extends Component {
       <Image src={bG} responsive/>
         <div id="cover">
           <div id="container">
-              <div className="Users" id="signText">
-                <h1>Sign up!</h1>
-                {this.state.users.map(user =>
+              <div className="Login" id="signText">
+                <h1>Sign in</h1>
+                {this.state.login.map(user => //esta parte no sé si omitirla
                 <div key = {user.id}>
                   <b>{user.email}</b>
                   <p>{user.name}</p>
                 </div>
                 )}
               </div>
-              <div className="SignUp" id="signForm">
+              <div className="SignIn" id="signForm">
                 <Form >
-                    <FieldGroup
-                      id="formControlsName"
-                      name="name"
-                      type="text"
-                      label="Name"
-                      placeholder="Enter name"
-                      onChange={this.onChange}
-                    />
                     <FieldGroup
                       id="formControlsEmail"
                       name="email"
@@ -84,9 +71,10 @@ class Users extends Component {
                     />
                 </Form>
                 <ButtonToolbar>
-                  <Link to ="/introduction">
-                    <Button id="submitButton" bsStyle="primary" onClick={this.onClick} > Submit </Button>
-                  </Link>
+                    <Button id="enterButton" bsStyle="primary" onClick={this.onClick} > Enter </Button>
+                    <Link to ="/users">
+                      <Button id="btnRegister" active>Please register</Button>
+                    </Link>
                 </ButtonToolbar>
               </div>
             </div>
@@ -105,4 +93,4 @@ function FieldGroup({ id, label, help, ...props }) {
     </FormGroup>
   );
 }
-export default Users;
+export default Login;
