@@ -19,6 +19,8 @@ import imgViajar from './assets/viajar.png';
 import imgSGMM from './assets/sgmm.jpg';
 import imgUniversidad from './assets/universidad.png';
 
+const request = require('superagent');
+
 class Goal extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +44,20 @@ class Goal extends Component {
   onClick = () => {
     const { goal } = this.state;
     console.log(goal);
+
+    request
+      .post('http://192.168.21.96:3001/api/goals')
+      .send({
+        goal: {
+          name: goal.name,
+          period: Number(goal.period),
+          price: Number(goal.price),
+        },
+      })
+      .set('X-API-Key', 'foobar')
+      .set('accept', 'json')
+      .end((err, res) => {
+      });
   }
 
   render() {
