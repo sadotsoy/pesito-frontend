@@ -13,6 +13,13 @@ li {
     background-color: #24292E;
     box-shadow: 0 5px 5px gray;
     text-align: center;
+    font-size: 18px;
+    
+}
+
+.menu a {
+    color: white;
+    
 }
 
 .intro {
@@ -22,6 +29,8 @@ li {
     height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,13 +70,72 @@ li {
 
 .contenedorServicios {
     display: flex;
+    text-align: center;
+}
+
+.contServHijo {
+    height: 600px;
+    width: 300px;
+    padding: 15px 15px;
+    margin-top: 150px;
+    
 }
 
 .btnService {
     background-color: gray;
-    width: 130px;
+    width: 100%;
     height: 50px;
     text-align: center;
     padding-top: 10px;
     font-size: 18px;
+}
+
+.workTitle{
+    text-align: center;
+}
+
+
+
+.galeriaBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.imgMargin {
+    margin: 15px;
+}
+
+.btnMoreInfo {
+     background-color: gray;
+     width: 200px;
+     height: 50px;
+     text-align: center;
+     padding-top: 10px;
+     font-size: 18px;
+     margin: 10px auto;
+     color: white;
+}
+
+.map {
+    width: 100%;
+    height:400px;  
+    border:0;
+    margin-top: 15px;
+}
+
+.contacto {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.contacto h3 {
+    font-weight: bold;
+}
+
+.contacto h4 {
+    font-weight: bold;
+    color: lightgrey;
+    margin-top: 35px;
 }
