@@ -16,6 +16,7 @@ class Routes extends Component {
             <Route path = "/users" component = {Users} />
             <Route path = "/introduction" component = {Introduction} />
             <Route path = "/invest" component = {Investment} />
+            <Route path = "/goals" component = {Goals} />
           <Route component ={Home} />
         </Switch>
     );
