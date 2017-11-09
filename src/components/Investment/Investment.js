@@ -24,7 +24,16 @@ class Investment extends Component {
         <Grid>
           <Row className="formCustom">
             <Col xs={1} xsOffset={5}>
-              <FormControl></FormControl>
+              <FormControl
+                name="money"
+                type="text"
+                placeholder="$100"
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={2} xsOffset={5}>
+              <b className="cantmin">Cantidad Mínima</b>
             </Col>
           </Row>
         </Grid>
